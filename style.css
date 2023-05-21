@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,700;1,500;1,600;1,700&family=Barlow:ital,wght@1,500&family=Merriweather:ital,wght@0,300;0,400;1,400;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(55deg, #000850 0%, #000320 100%), radial-gradient(100% 225% at 100% 0%, #FF6928 0%, #000000 100%), linear-gradient(235deg, #BDFF00 0%, #000000 100%), linear-gradient(180deg, #002BDC 0%, #002BDC 45%, #2F4BFF 45%, #2F4BFF 60%, #00A6E7 60%, #00A6E7 80%, #FFE37F 80%, #FFE37F 100%);
+background-blend-mode: screen, overlay, hard-light, normal;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .cubic {
+    position: relative;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    transform: rotate(45deg);
+    /* border-collapse: collapse; */
+    border-top:  4px solid brown;
+    border-left: 4px solid brown;
+    border-right: 4px solid #e74c3c;
+    border-bottom: 4px solid #e74c3c;
+    border-top: 4px solid #adc139;
+    animation:  animate 5s linear infinite;
+}
+  a:hover {
+    animation:  animate 5s linear infinite;
+    animation-iteration-count: 3;
+  }
+
+@keyframes animate
+{
+    0%
+    { 
+    transform: rotate(0deg);
+}
+    25%
+    { 
+    transform: rotate(90deg);
+}
+    50%
+    { 
+    transform: rotate(180deg);
+}
+
+    75%
+    { 
+    transform: rotate(270deg);
+}
+    100%
+{
+    transform: rotate(360deg);
+}
+}
+
+.container .cubic::before
+{
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgb(245, 245, 245);
+    box-shadow: 0 0 0 3px rgb(66, 94, 164),
+    0 0 0 7px rgb(131, 142, 61), 0 0 0 9px rgb(129, 61, 142);
+}
+
+@keyframes blink { 50% { color: transparent }}
+.loader__dot { animation: 1s blink infinite }
+.loader__dot:nth-child(2) { animation-delay: 250ms }
+.loader__dot:nth-child(3) { animation-delay: 500ms }
+ 
+.container p {
+  position: relative;  
+  color: #02040b;
+  font-size: x-large;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 0.55em;
+  text-shadow:  rgb(69, 101, 43)  0.001em 0 0.001em ;
+
+}
